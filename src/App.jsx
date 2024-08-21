@@ -21,11 +21,12 @@ function App() {
 
     const weeks = Math.floor(totalSeconds / (7 * 24 * 60 * 60));
     const days = Math.floor((totalSeconds % (7 * 24 * 60 * 60)) / (24 * 60 * 60));
+    const days1 = Math.floor((totalSeconds / ( 24 * 60 * 60)));
     const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
     const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
     const seconds = totalSeconds % 60;
 
-    setTimeRemaining({ weeks, days, hours, minutes, seconds, milliseconds });
+    setTimeRemaining({ weeks, days,days1, hours, minutes, seconds, milliseconds });
   };
 
   useEffect(() => {
@@ -37,7 +38,7 @@ function App() {
 
   return (
     <div className="countdown-timer">
-      <h1>Time Left</h1>
+      <h1>Time Left {timeRemaining.days1} Days</h1>
       <div className="time-display">
         <div className="time-unit">
           <div>
